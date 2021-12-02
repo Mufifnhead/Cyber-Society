@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 250px;
+  text-align: center;
+}
+
+#Events {background-color:red;}
+#Activities {background-color:green;}
+#Contacts {background-color:blue;}
+</style>
+</head>
+<body>
+
+
+<div id="Events" class="tabcontent">
+  <h1>Events</h1>
+  <p>What Events do you want to do?</p>
+</div>
+
+<div id="Activities" class="tabcontent">
+  <h1>Activities</h1>
+  <p>Vote for what Activities you want to do! <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeuEcdZ1V4UQCcqLWbrD37vCNncPy4cAaNlxwZhdcKQ0jJIlA/viewform?embedded=true" width="640" height="1023" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></p> 
+</div>
+
+<div id="Contacts" class="tabcontent">
+  <h1>Contacts</h1>
+  <p>anders.rasmussen@students.ccsk12.com
+     carden.brown@students.ccsk12.com</p>
+</div>
+
+
+<button class="tablink" onclick="openCity('Events', this, 'red')" id="defaultOpen">Events</button>
+<button class="tablink" onclick="openCity('Activities', this, 'green')">Activities</button>
+<button class="tablink" onclick="openCity('Contacts', this, 'blue')">Contacts</button>
+
+
+<script>
+function openCity(cityName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
